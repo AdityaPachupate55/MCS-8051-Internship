@@ -1,0 +1,108 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/02/2024  19:33:13  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\ADC_interfacing.obj TO .\Objects\ADC_interfacing PRINT (.\Listings\ADC_interfacing
+>> .m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\ADC_interfacing.obj (ADC_INTERFACING)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\ADC_interfacing (ADC_INTERFACING)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0026H     UNIT         ?PR?_DELAY?ADC_INTERFACING
+            CODE    0826H     0021H     UNIT         ?PR?MAIN?ADC_INTERFACING
+            CODE    0847H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\ADC_interfacing (ADC_INTERFACING)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?ADC_INTERFACING
+
+?PR?MAIN?ADC_INTERFACING
+  +--> ?PR?_DELAY?ADC_INTERFACING
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\ADC_interfacing (ADC_INTERFACING)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ADC_INTERFACING
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        ldata
+  C:0800H         PUBLIC        _delay
+  B:00A0H.2       PUBLIC        int_r
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/02/2024  19:33:13  PAGE 2
+
+
+  C:0826H         PUBLIC        main
+  B:00A0H.0       PUBLIC        rd
+  B:00A0H.1       PUBLIC        wd
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        itime
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         3
+  C:0800H         LINE#         4
+  C:0800H         LINE#         6
+  C:0803H         LINE#         7
+  C:0825H         LINE#         9
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0007H         SYMBOL        d
+  -------         ENDDO         
+  C:0826H         LINE#         19
+  C:0826H         LINE#         20
+  C:0826H         LINE#         24
+  C:0829H         LINE#         26
+  C:082BH         LINE#         27
+  C:082DH         LINE#         28
+  C:082FH         LINE#         30
+  C:082FH         LINE#         31
+  C:0831H         LINE#         32
+  C:0838H         LINE#         33
+  C:083AH         LINE#         35
+  C:083DH         LINE#         36
+  C:083FH         LINE#         37
+  C:0841H         LINE#         38
+  C:0843H         LINE#         39
+  C:0845H         LINE#         40
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        ADC_INTERFACING
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0047H BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=86
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

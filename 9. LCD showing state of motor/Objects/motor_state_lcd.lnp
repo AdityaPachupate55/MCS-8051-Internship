@@ -1,0 +1,3 @@
+".\Objects\motor_state_lcd.obj" 
+TO ".\Objects\motor_state_lcd" 
+PRINT(".\Listings\motor_state_lcd.m51")

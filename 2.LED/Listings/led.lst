@@ -1,0 +1,55 @@
+C51 COMPILER V9.60.7.0   LED                                                               01/20/2024 17:47:29 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE LED
+OBJECT MODULE PLACED IN .\Objects\led.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE led.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\led.l
+                    -st) TABS(2) OBJECT(.\Objects\led.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          //Function for generating delay
+   4          void delay(int itime){
+   5   1        int i,j;
+   6   1        for(i=0;i<1000;i++)
+   7   1        for(j=0;j<itime;j++);
+   8   1      
+   9   1      }
+  10          int  main()
+  11          {
+  12   1        //Port 2 pin 1 
+  13   1        // here 0x01 is the address of the first pin of the port 2 , Which is a hex value
+  14   1        // The led which ned to be switched ON its hex value is assigned to be 1 and others are 0
+  15   1        //  Below is example is you want to glow only ODD/EVEN LED's 
+  16   1        // For even
+  17   1        // 8  7  6  5  4  3  2  1 --> LED number
+  18   1        
+  19   1        // 8  4  2  1  8  4  2  1 --> HEX value
+  20   1        // 1  0  1  0  1  0  1  0 
+  21   1        
+  22   1        // Addition of even bits is 8+1 =10 in hexadecimal it is AA
+  23   1        
+  24   1          P2 = 0xAA;
+  25   1          delay(10);
+  26   1          
+  27   1          
+  28   1        
+  29   1        
+  30   1          return 0;
+  31   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     51    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,3 @@
+".\Objects\7_segment common_anode.obj" 
+TO ".\Objects\7_segment common_anode" 
+PRINT(".\Listings\7_segment common_anode.m51")

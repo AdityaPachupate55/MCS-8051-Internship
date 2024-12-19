@@ -1,0 +1,3 @@
+".\Objects\7seg_Traffic_signal.obj" 
+TO ".\Objects\7seg_Traffic_signal" 
+PRINT(".\Listings\7seg_Traffic_signal.m51")

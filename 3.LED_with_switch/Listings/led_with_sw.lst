@@ -1,0 +1,49 @@
+C51 COMPILER V9.60.7.0   LED_WITH_SW                                                       01/20/2024 18:01:18 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE LED_WITH_SW
+OBJECT MODULE PLACED IN .\Objects\led_with_sw.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE led_with_sw.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listin
+                    -gs\led_with_sw.lst) TABS(2) OBJECT(.\Objects\led_with_sw.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          //Function for generating delay
+   4          void delay(int itime){
+   5   1        int i,j;
+   6   1        for(i=0;i<1000;i++)
+   7   1        for(j=0;j<itime;j++);
+   8   1      
+   9   1      }
+  10          
+  11            // Declaring switch P1 is the port and 0 is the pin
+  12            sbit sw = P1^0;
+  13          
+  14          int  main()
+  15          { 
+  16   1        if(sw==1){
+  17   2          P2 = 0xAA;
+  18   2          
+  19   2        }
+  20   1        else{
+  21   2          P2 = 0x55;
+  22   2          
+  23   2        } 
+  24   1          return 0;
+  25   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     53    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

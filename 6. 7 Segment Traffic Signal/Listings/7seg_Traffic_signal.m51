@@ -1,0 +1,134 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    01/25/2024  13:45:40  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\7seg_Traffic_signal.obj TO .\Objects\7seg_Traffic_signal PRINT (.\Listings\7seg_Tr
+>> affic_signal.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\7seg_Traffic_signal.obj (7SEG_TRAFFIC_SIGNAL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\7seg_Traffic_signal (7SEG_TRAFFIC_SIGNAL)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         _DATA_GROUP_
+            IDATA   001CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     0058H     UNIT         ?PR?MAIN?7SEG_TRAFFIC_SIGNAL
+            CODE    094EH     0036H     UNIT         ?PR?_DELAY?7SEG_TRAFFIC_SIGNAL
+            CODE    0984H     0014H     UNIT         ?CO?7SEG_TRAFFIC_SIGNAL
+            CODE    0998H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\7seg_Traffic_signal (7SEG_TRAFFIC_SIGNAL)
+
+
+SEGMENT                                  DATA_GROUP 
+  +--> CALLED SEGMENT                  START    LENGTH
+------------------------------------------------------
+?C_C51STARTUP                          -----    -----
+  +--> ?PR?MAIN?7SEG_TRAFFIC_SIGNAL
+
+?PR?MAIN?7SEG_TRAFFIC_SIGNAL           0008H    0014H
+  +--> ?CO?7SEG_TRAFFIC_SIGNAL
+  +--> ?PR?_DELAY?7SEG_TRAFFIC_SIGNAL
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\7seg_Traffic_signal (7SEG_TRAFFIC_SIGNAL)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        7SEG_TRAFFIC_SIGNAL
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/25/2024  13:45:40  PAGE 2
+
+
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:095EH         PUBLIC        _delay
+  B:0090H.2       PUBLIC        green
+  B:0090H.1       PUBLIC        yellow
+  C:08F6H         PUBLIC        main
+  B:0090H.0       PUBLIC        red
+  C:0984H         SYMBOL        _?ix1000
+  C:094EH         SYMBOL        L?0021
+  -------         PROC          L?0020
+  -------         ENDPROC       L?0020
+  C:094EH         SYMBOL        L?0021
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        itime
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:095EH         LINE#         5
+  C:095EH         LINE#         7
+  C:0961H         LINE#         8
+  C:0983H         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        numbers
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:08F6H         LINE#         21
+  C:08F6H         LINE#         22
+  C:08F6H         LINE#         23
+  C:0909H         LINE#         26
+  C:090BH         LINE#         27
+  C:090DH         LINE#         28
+  C:090FH         LINE#         30
+  C:0912H         LINE#         31
+  C:0912H         LINE#         32
+  C:0915H         LINE#         33
+  C:091EH         LINE#         35
+  C:0920H         LINE#         36
+  C:0922H         LINE#         37
+  C:0924H         LINE#         39
+  C:0927H         LINE#         40
+  C:0927H         LINE#         41
+  C:092AH         LINE#         42
+  C:0933H         LINE#         45
+  C:0935H         LINE#         46
+  C:0937H         LINE#         47
+  C:0939H         LINE#         49
+  C:093EH         LINE#         50
+  C:093EH         LINE#         51
+  C:0941H         LINE#         52
+  C:094AH         LINE#         56
+  C:094DH         LINE#         57
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        7SEG_TRAFFIC_SIGNAL
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/25/2024  13:45:40  PAGE 3
+
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00A2H BYTE ( 7%) *
+******************************************************************************
+
+Program Size: data=29.0 xdata=0 code=423
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

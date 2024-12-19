@@ -1,0 +1,107 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    01/23/2024  16:05:48  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\7_segment_common_cathode.obj TO .\Objects\7_segment_common_cathode PRINT (.\Listin
+>> gs\7_segment_common_cathode.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\7_segment_common_cathode.obj (7_SEGMENT_COMMON_CATHODE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\7_segment_common_cathode (7_SEGMENT_COMMON_CATHODE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0043H     UNIT         ?PR?MAIN?7_SEGMENT_COMMON_CATHODE
+            CODE    0843H     0026H     UNIT         ?PR?_DELAY?7_SEGMENT_COMMON_CATHODE
+            CODE    0869H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\7_segment_common_cathode (7_SEGMENT_COMMON_CATHODE)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?7_SEGMENT_COMMON_CATHODE
+
+?PR?MAIN?7_SEGMENT_COMMON_CATHODE
+  +--> ?PR?_DELAY?7_SEGMENT_COMMON_CATHODE
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\7_segment_common_cathode (7_SEGMENT_COMMON_CATHODE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        7_SEGMENT_COMMON_CATHODE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0843H         PUBLIC        _delay
+  C:0800H         PUBLIC        main
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        itime
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/23/2024  16:05:48  PAGE 2
+
+
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0843H         LINE#         4
+  C:0843H         LINE#         6
+  C:0846H         LINE#         7
+  C:0868H         LINE#         9
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  C:0800H         LINE#         13
+  C:0800H         LINE#         14
+  C:0800H         LINE#         16
+  C:0803H         LINE#         17
+  C:080AH         LINE#         20
+  C:080DH         LINE#         21
+  C:0810H         LINE#         24
+  C:0813H         LINE#         25
+  C:0816H         LINE#         28
+  C:0819H         LINE#         29
+  C:081CH         LINE#         32
+  C:081FH         LINE#         33
+  C:0822H         LINE#         36
+  C:0825H         LINE#         37
+  C:0828H         LINE#         40
+  C:082BH         LINE#         41
+  C:082EH         LINE#         44
+  C:0831H         LINE#         45
+  C:0834H         LINE#         48
+  C:0837H         LINE#         49
+  C:083AH         LINE#         52
+  C:083DH         LINE#         53
+  C:0840H         LINE#         55
+  C:0842H         LINE#         56
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        7_SEGMENT_COMMON_CATHODE
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0069H BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=120
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

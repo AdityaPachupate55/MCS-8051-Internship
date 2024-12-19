@@ -1,0 +1,176 @@
+C51 COMPILER V9.60.7.0   MAIN                                                              01/31/2024 20:36:55 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE MAIN
+OBJECT MODULE PLACED IN .\Objects\main.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE main.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\main
+                    -.lst) TABS(2) OBJECT(.\Objects\main.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          // Declaring LCD pins
+   4          sbit rs = P2 ^ 0;
+   5          sbit rw = P2 ^ 1;
+   6          sbit en = P2 ^ 2;
+   7          sfr ldata = 0xB0;
+   8          
+   9          // Declaring L298 pins
+  10          sbit m1 = P2 ^ 3;
+  11          sbit m2 = P2 ^ 4;
+  12          sbit m3 = P2 ^ 7;
+  13          sbit m4 = P2 ^ 6;
+  14          
+  15          // Declaring switch
+  16          sbit s1 = P1 ^ 0;
+  17          sbit s2 = P1 ^ 1;
+  18          
+  19          // Function for generating delay
+  20          void delay(int itime)
+  21          {
+  22   1        int i, j;
+  23   1        for (i = 0; i < 1000; i++)
+  24   1          for (j = 0; j < itime; j++)
+  25   1            ;
+  26   1      }
+  27          
+  28          // Function for giving commands to LCD
+  29          void lcdcmd(char value)
+  30          {
+  31   1        ldata = value;
+  32   1        rs = 0; // when rs = 0 --> recieving commands
+  33   1        rw = 0; // when w = 0 --> write dataa
+  34   1      
+  35   1        // Triggereing en pin
+  36   1        en = 1;
+  37   1        delay(10);
+  38   1        en = 0;
+  39   1      }
+  40          
+  41          // funtion for printing dataa on LCD
+  42          void lcddata(char value)
+  43          {
+  44   1        ldata = value;
+  45   1        rs = 1; // when rs = 0  --> recieving dataa
+  46   1        rw = 0; // when w = 0 --> write dataa
+  47   1      
+  48   1        en = 1;
+  49   1        delay(10);
+  50   1        en = 0;
+  51   1      }
+  52          
+  53          // driving function
+  54          
+C51 COMPILER V9.60.7.0   MAIN                                                              01/31/2024 20:36:55 PAGE 2   
+
+  55          void forwardFuntion()
+  56          {
+  57   1        int i;
+  58   1        char forw[] = "FORWARD";
+  59   1        m1 = 1;
+  60   1        m2 = 0;
+  61   1        m3 = 1;
+  62   1        m4 = 0;
+  63   1      
+  64   1        for (i = 0; i < 7; i++)
+  65   1        {
+  66   2          lcddata(forw[i]);
+  67   2        }
+  68   1        delay(10);
+  69   1        lcdcmd(0x01);
+  70   1      }
+  71          
+  72          void backFunction()
+  73          {
+  74   1        int i;
+  75   1        char back[] = "BACKWARD";
+  76   1        m1 = 0;
+  77   1        m2 = 1;
+  78   1        m3 = 0;
+  79   1        m4 = 1;
+  80   1      
+  81   1        for (i = 0; i < 8; i++)
+  82   1        {
+  83   2          lcddata(back[i]);
+  84   2        }
+  85   1        delay(10);
+  86   1        lcdcmd(0x01);
+  87   1      }
+  88          
+  89          void leftFunction()
+  90          {
+  91   1        int i;
+  92   1        char left[] = "LEFT";
+  93   1        m1 = 0;
+  94   1        m2 = 0;
+  95   1        m3 = 1;
+  96   1        m4 = 0;
+  97   1      
+  98   1        for (i = 0; i < 4; i++)
+  99   1        {
+ 100   2          lcddata(left[i]);
+ 101   2        }
+ 102   1        delay(10);
+ 103   1        lcdcmd(0x01);
+ 104   1      }
+ 105          
+ 106          void rightFunction()
+ 107          {
+ 108   1        int i;
+ 109   1        char right[] = "RIGHT";
+ 110   1        m1 = 1;
+ 111   1        m2 = 0;
+ 112   1        m3 = 0;
+ 113   1        m4 = 0;
+ 114   1      
+ 115   1        for (i = 0; i < 5; i++)
+ 116   1        {
+C51 COMPILER V9.60.7.0   MAIN                                                              01/31/2024 20:36:55 PAGE 3   
+
+ 117   2          lcddata(right[i]);
+ 118   2        }
+ 119   1        delay(10);
+ 120   1        lcdcmd(0x01);
+ 121   1      }
+ 122          
+ 123          int main()
+ 124          {
+ 125   1        int i;
+ 126   1      
+ 127   1        
+ 128   1        lcdcmd(0x0E); // Display ON , cursor BLINKING;
+ 129   1        lcdcmd(0x38); // 5x7 matrix
+ 130   1      
+ 131   1        // Forward
+ 132   1        if (s1 == 1 && s2 == 1) forwardFuntion();
+ 133   1        
+ 134   1      
+ 135   1        // Backward
+ 136   1        if (s1 == 0 && s2 == 0) backFunction();
+ 137   1      
+ 138   1        // Left
+ 139   1        if (s1 == 1 && s2 == 0) rightFunction();
+ 140   1      
+ 141   1        // right
+ 142   1        if (s1 == 0 && s2 == 1) leftFunction();
+ 143   1        
+ 144   1      
+ 145   1      
+ 146   1        return 0;
+ 147   1      }
+*** WARNING C280 IN LINE 125 OF main.c: 'i': unreferenced local variable
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    334    ----
+   CONSTANT SIZE    =     28    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----      30
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

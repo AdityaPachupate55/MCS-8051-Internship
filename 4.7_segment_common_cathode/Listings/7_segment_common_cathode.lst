@@ -1,0 +1,82 @@
+C51 COMPILER V9.60.7.0   7_SEGMENT_COMMON_CATHODE                                          01/23/2024 16:05:48 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE 7_SEGMENT_COMMON_CATHODE
+OBJECT MODULE PLACED IN .\Objects\7_segment_common_cathode.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE 7_segment_common_cathode.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND P
+                    -RINT(.\Listings\7_segment_common_cathode.lst) TABS(2) OBJECT(.\Objects\7_segment_common_cathode.obj)
+
+line level    source
+
+   1          #include<reg51.h>
+   2          
+   3          //Function for generating delay
+   4          void delay(int itime){
+   5   1        int i,j;
+   6   1        for(i=0;i<1000;i++)
+   7   1        for(j=0;j<itime;j++);
+   8   1      
+   9   1      }
+  10          
+  11            
+  12          
+  13          int  main()
+  14          { 
+  15   1        //0
+  16   1        P2=0x3F;
+  17   1        delay(10);
+  18   1        
+  19   1        //1
+  20   1        P2=0x06;
+  21   1        delay(10);
+  22   1        
+  23   1        //2
+  24   1        P2=0x5B;
+  25   1        delay(10);
+  26   1        
+  27   1        //3
+  28   1        P2=0x4F;
+  29   1        delay(10);
+  30   1        
+  31   1        //4
+  32   1        P2=0x66;
+  33   1        delay(10);
+  34   1        
+  35   1        //5
+  36   1        P2=0x6D;
+  37   1        delay(10);
+  38   1        
+  39   1        //6
+  40   1        P2=0x7D;
+  41   1        delay(10);
+  42   1        
+  43   1        //7
+  44   1        P2=0x07;
+  45   1        delay(10);
+  46   1        
+  47   1        //8
+  48   1        P2=0x7F;
+  49   1        delay(10);
+  50   1        
+  51   1        //9
+  52   1        P2=0x6F;
+  53   1        delay(10);
+  54   1          
+C51 COMPILER V9.60.7.0   7_SEGMENT_COMMON_CATHODE                                          01/23/2024 16:05:48 PAGE 2   
+
+  55   1          return 0;
+  56   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    105    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

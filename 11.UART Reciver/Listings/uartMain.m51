@@ -1,0 +1,104 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    02/09/2024  16:00:54  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\uartMain.obj TO .\Objects\uartMain PRINT (.\Listings\uartMain.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\uartMain.obj (UARTMAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\uartMain (UARTMAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            IDATA   0008H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0026H     UNIT         ?PR?_DELAY?UARTMAIN
+            CODE    0826H     0018H     UNIT         ?PR?MAIN?UARTMAIN
+            CODE    083EH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\uartMain (UARTMAIN)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?UARTMAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\uartMain (UARTMAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        UARTMAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0800H         PUBLIC        _delay
+  B:0098H.0       PUBLIC        RI
+  C:0826H         PUBLIC        main
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0089H         PUBLIC        TMOD
+  D:008DH         PUBLIC        TH1
+  B:0088H.6       PUBLIC        TR1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  02/09/2024  16:00:54  PAGE 2
+
+
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        itime
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0800H         LINE#         7
+  C:0800H         LINE#         8
+  C:0800H         LINE#         10
+  C:0803H         LINE#         11
+  C:0825H         LINE#         13
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0007H         SYMBOL        ch
+  -------         ENDDO         
+  C:0826H         LINE#         15
+  C:0826H         LINE#         17
+  C:0826H         LINE#         20
+  C:0829H         LINE#         21
+  C:082CH         LINE#         22
+  C:082FH         LINE#         23
+  C:0831H         LINE#         25
+  C:0834H         LINE#         26
+  C:0836H         LINE#         27
+  C:0838H         LINE#         28
+  C:083AH         LINE#         30
+  C:083DH         LINE#         31
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        UARTMAIN
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?_DELAY?UARTMAIN
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 003EH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=9.0 xdata=0 code=77
+LINK/LOCATE RUN COMPLETE.  1 WARNING(S),  0 ERROR(S)

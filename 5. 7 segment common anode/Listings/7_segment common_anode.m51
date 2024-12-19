@@ -1,0 +1,111 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    01/23/2024  19:18:13  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\7_segment common_anode.obj TO .\Objects\7_segment common_anode PRINT (.\Listings\7
+>> _segment common_anode.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\7_segment common_anode.obj (7_SEGMENT_COMMON_ANODE)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\7_segment common_anode (7_SEGMENT_COMMON_ANODE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0014H     UNIT         _DATA_GROUP_
+            IDATA   001CH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     0039H     UNIT         ?PR?MAIN?7_SEGMENT_COMMON_ANODE
+            CODE    092FH     0020H     UNIT         ?PR?_DELAY?7_SEGMENT_COMMON_ANODE
+            CODE    094FH     0014H     UNIT         ?CO?7_SEGMENT_COMMON_ANODE
+            CODE    0963H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\7_segment common_anode (7_SEGMENT_COMMON_ANODE)
+
+
+SEGMENT                                     DATA_GROUP 
+  +--> CALLED SEGMENT                     START    LENGTH
+---------------------------------------------------------
+?C_C51STARTUP                             -----    -----
+  +--> ?PR?MAIN?7_SEGMENT_COMMON_ANODE
+
+?PR?MAIN?7_SEGMENT_COMMON_ANODE           0008H    0014H
+  +--> ?CO?7_SEGMENT_COMMON_ANODE
+  +--> ?PR?_DELAY?7_SEGMENT_COMMON_ANODE
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\7_segment common_anode (7_SEGMENT_COMMON_ANODE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        7_SEGMENT_COMMON_ANODE
+  C:0000H         SYMBOL        _ICE_DUMMY_
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/23/2024  19:18:13  PAGE 2
+
+
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:092FH         PUBLIC        _delay
+  C:08F6H         PUBLIC        main
+  C:094FH         SYMBOL        _?ix1000
+  B:0090H.0       PUBLIC        sw
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        time
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:092FH         LINE#         5
+  C:092FH         LINE#         6
+  C:092FH         LINE#         8
+  C:0939H         LINE#         9
+  C:094EH         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        numbers
+  D:0082H         SYMBOL        i
+  -------         ENDDO         
+  C:08F6H         LINE#         14
+  C:08F6H         LINE#         15
+  C:08F6H         LINE#         16
+  C:0909H         LINE#         20
+  C:090CH         LINE#         21
+  C:090FH         LINE#         22
+  C:091BH         LINE#         23
+  C:0922H         LINE#         24
+  C:0922H         LINE#         25
+  C:092BH         LINE#         30
+  C:092EH         LINE#         31
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        7_SEGMENT_COMMON_ANODE
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 006DH BYTE ( 5%) *
+******************************************************************************
+
+Program Size: data=29.0 xdata=0 code=370
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

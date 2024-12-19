@@ -1,0 +1,282 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    01/31/2024  20:36:55  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\main PRINT (.\Listings\main.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
+
+
+LINK MAP OF MODULE:  .\Objects\main (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     000BH     UNIT         _DATA_GROUP_
+            IDATA   0013H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     0036H     UNIT         ?PR?LEFTFUNCTION?MAIN
+            CODE    092CH     0036H     UNIT         ?PR?RIGHTFUNCTION?MAIN
+            CODE    0962H     0034H     UNIT         ?PR?FORWARDFUNTION?MAIN
+            CODE    0996H     0034H     UNIT         ?PR?BACKFUNCTION?MAIN
+            CODE    09CAH     0032H     UNIT         ?PR?MAIN?MAIN
+            CODE    09FCH     002EH     UNIT         ?PR?_DELAY?MAIN
+            CODE    0A2AH     001CH     UNIT         ?CO?MAIN
+            CODE    0A46H     0010H     UNIT         ?PR?_LCDDATA?MAIN
+            CODE    0A56H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0A62H     000AH     UNIT         ?PR?_LCDCMD?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\main (MAIN)
+
+
+SEGMENT                           DATA_GROUP 
+  +--> CALLED SEGMENT           START    LENGTH
+-----------------------------------------------
+?C_C51STARTUP                   -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                   0008H    0002H
+  +--> ?PR?_LCDCMD?MAIN
+  +--> ?PR?FORWARDFUNTION?MAIN
+  +--> ?PR?BACKFUNCTION?MAIN
+  +--> ?PR?RIGHTFUNCTION?MAIN
+  +--> ?PR?LEFTFUNCTION?MAIN
+
+?PR?_LCDCMD?MAIN                -----    -----
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/31/2024  20:36:55  PAGE 2
+
+
+  +--> ?PR?_DELAY?MAIN
+
+?PR?FORWARDFUNTION?MAIN         000AH    0008H
+  +--> ?CO?MAIN
+  +--> ?PR?_LCDDATA?MAIN
+  +--> ?PR?_DELAY?MAIN
+  +--> ?PR?_LCDCMD?MAIN
+
+?PR?_LCDDATA?MAIN               -----    -----
+  +--> ?PR?_DELAY?MAIN
+
+?PR?BACKFUNCTION?MAIN           000AH    0009H
+  +--> ?CO?MAIN
+  +--> ?PR?_LCDDATA?MAIN
+  +--> ?PR?_DELAY?MAIN
+  +--> ?PR?_LCDCMD?MAIN
+
+?PR?RIGHTFUNCTION?MAIN          000AH    0006H
+  +--> ?CO?MAIN
+  +--> ?PR?_LCDDATA?MAIN
+  +--> ?PR?_DELAY?MAIN
+  +--> ?PR?_LCDCMD?MAIN
+
+?PR?LEFTFUNCTION?MAIN           000AH    0005H
+  +--> ?CO?MAIN
+  +--> ?PR?_LCDDATA?MAIN
+  +--> ?PR?_DELAY?MAIN
+  +--> ?PR?_LCDCMD?MAIN
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\main (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:00B0H         PUBLIC        ldata
+  C:0A04H         PUBLIC        _delay
+  B:00A0H.3       PUBLIC        m1
+  B:00A0H.4       PUBLIC        m2
+  B:00A0H.7       PUBLIC        m3
+  B:00A0H.6       PUBLIC        m4
+  B:0090H.0       PUBLIC        s1
+  B:0090H.1       PUBLIC        s2
+  C:09CAH         PUBLIC        main
+  C:0A2AH         SYMBOL        _?ix1000
+  C:0A32H         SYMBOL        _?ix1001
+  C:0A3BH         SYMBOL        _?ix1002
+  C:0A40H         SYMBOL        _?ix1003
+  C:0A4CH         PUBLIC        _lcddata
+  B:00A0H.2       PUBLIC        en
+  C:0996H         PUBLIC        backFunction
+  C:0962H         PUBLIC        forwardFuntion
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/31/2024  20:36:55  PAGE 3
+
+
+  B:00A0H.0       PUBLIC        rs
+  B:00A0H.1       PUBLIC        rw
+  C:0A62H         PUBLIC        _lcdcmd
+  C:092CH         PUBLIC        rightFunction
+  C:08F6H         PUBLIC        leftFunction
+  C:0A00H         SYMBOL        L?0034
+  -------         PROC          L?0033
+  -------         ENDPROC       L?0033
+  C:0A00H         SYMBOL        L?0034
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        itime
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0A04H         LINE#         20
+  C:0A04H         LINE#         21
+  C:0A04H         LINE#         23
+  C:0A07H         LINE#         24
+  C:0A29H         LINE#         26
+  -------         ENDPROC       _DELAY
+  -------         PROC          _LCDCMD
+  D:0007H         SYMBOL        value
+  C:0A62H         LINE#         29
+  C:0A62H         LINE#         30
+  C:0A62H         LINE#         31
+  C:0A64H         LINE#         32
+  C:0A66H         LINE#         33
+  C:0A66H         LINE#         36
+  C:0A66H         LINE#         37
+  C:0A69H         LINE#         38
+  C:0A6BH         LINE#         39
+  -------         ENDPROC       _LCDCMD
+  C:0A48H         SYMBOL        L?0036
+  -------         PROC          L?0035
+  -------         ENDPROC       L?0035
+  C:0A48H         SYMBOL        L?0036
+  -------         PROC          _LCDDATA
+  D:0007H         SYMBOL        value
+  C:0A4CH         LINE#         42
+  C:0A4CH         LINE#         43
+  C:0A4CH         LINE#         44
+  C:0A4EH         LINE#         45
+  C:0A50H         LINE#         46
+  C:0A50H         LINE#         48
+  C:0A50H         LINE#         49
+  C:0A53H         LINE#         50
+  C:0A55H         LINE#         51
+  -------         ENDPROC       _LCDDATA
+  -------         PROC          FORWARDFUNTION
+  -------         DO            
+  D:0082H         SYMBOL        i
+  D:000AH         SYMBOL        forw
+  -------         ENDDO         
+  C:0962H         LINE#         55
+  C:0962H         LINE#         56
+  C:0962H         LINE#         58
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/31/2024  20:36:55  PAGE 4
+
+
+  C:0975H         LINE#         59
+  C:0977H         LINE#         60
+  C:0979H         LINE#         61
+  C:097BH         LINE#         62
+  C:097DH         LINE#         64
+  C:0980H         LINE#         65
+  C:0980H         LINE#         66
+  C:0985H         LINE#         67
+  C:098EH         LINE#         68
+  C:0991H         LINE#         69
+  -------         ENDPROC       FORWARDFUNTION
+  -------         PROC          BACKFUNCTION
+  -------         DO            
+  D:0082H         SYMBOL        i
+  D:000AH         SYMBOL        back
+  -------         ENDDO         
+  C:0996H         LINE#         72
+  C:0996H         LINE#         73
+  C:0996H         LINE#         75
+  C:09A9H         LINE#         76
+  C:09ABH         LINE#         77
+  C:09ADH         LINE#         78
+  C:09AFH         LINE#         79
+  C:09B1H         LINE#         81
+  C:09B4H         LINE#         82
+  C:09B4H         LINE#         83
+  C:09B9H         LINE#         84
+  C:09C2H         LINE#         85
+  C:09C5H         LINE#         86
+  -------         ENDPROC       BACKFUNCTION
+  -------         PROC          LEFTFUNCTION
+  -------         DO            
+  D:0082H         SYMBOL        i
+  D:000AH         SYMBOL        left
+  -------         ENDDO         
+  C:08F6H         LINE#         89
+  C:08F6H         LINE#         90
+  C:08F6H         LINE#         92
+  C:0909H         LINE#         93
+  C:090BH         LINE#         94
+  C:090DH         LINE#         95
+  C:090FH         LINE#         96
+  C:0911H         LINE#         98
+  C:0914H         LINE#         99
+  C:0914H         LINE#         100
+  C:091BH         LINE#         101
+  C:0924H         LINE#         102
+  C:0927H         LINE#         103
+  -------         ENDPROC       LEFTFUNCTION
+  -------         PROC          RIGHTFUNCTION
+  -------         DO            
+  D:0082H         SYMBOL        i
+  D:000AH         SYMBOL        right
+  -------         ENDDO         
+  C:092CH         LINE#         106
+  C:092CH         LINE#         107
+  C:092CH         LINE#         109
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/31/2024  20:36:55  PAGE 5
+
+
+  C:093FH         LINE#         110
+  C:0941H         LINE#         111
+  C:0943H         LINE#         112
+  C:0945H         LINE#         113
+  C:0947H         LINE#         115
+  C:094AH         LINE#         116
+  C:094AH         LINE#         117
+  C:0951H         LINE#         118
+  C:095AH         LINE#         119
+  C:095DH         LINE#         120
+  -------         ENDPROC       RIGHTFUNCTION
+  -------         PROC          MAIN
+  -------         DO            
+  D:0008H         SYMBOL        i
+  -------         ENDDO         
+  C:09CAH         LINE#         123
+  C:09CAH         LINE#         124
+  C:09CAH         LINE#         128
+  C:09CFH         LINE#         129
+  C:09D4H         LINE#         132
+  C:09DDH         LINE#         136
+  C:09E6H         LINE#         139
+  C:09EFH         LINE#         142
+  C:09F8H         LINE#         146
+  C:09FBH         LINE#         147
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 016AH BYTE (17%) *
+******************************************************************************
+
+Program Size: data=20.0 xdata=0 code=623
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
